@@ -1,5 +1,9 @@
 console.log("connected");
 
+const apiUrl = window.location.protocal === "file:"
+    ? "http://localhost:8080" // LOCAL API SERVER DURING DEVELOPMENT
+    : ""; // PRODUCTION API (DOMAN NAME TOO)
+
 let musicWrapper = document.querySelector("#song-wrapper");
 let albumInput = document.querySelector("#in-album");
 let titleInput = document.querySelector("#in-title");
