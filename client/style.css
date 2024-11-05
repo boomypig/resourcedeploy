@@ -1,0 +1,228 @@
+/* General Reset and Body Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #EEEEEE; 
+  color: #373A40;
+  padding: 20px;
+}
+
+/* Title */
+h2 {
+  font-size: 2em;
+  color: #373A40;
+  text-shadow: 1px 1px 1px #686D76;
+  margin-bottom: 15px;
+}
+
+/* Song Wrapper */
+#song-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Five items per row */
+  gap: 15px;
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+/* Song Entry Styling */
+.song-entry {
+  background-color: #EEEEEE;
+  border: 2px solid #373A40;
+  box-shadow: 4px 4px 0px 0px #686D76;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.song-entry h2, .song-entry h3 {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  color: #373A40;
+}
+
+.song-entry p {
+  font-size: 0.9em;
+  margin: 4px 0;
+  color: #686D76;
+}
+
+/* Divider line */
+hr {
+  border: none;
+  border-top: 1px solid #373A40;
+  margin: 10px 0;
+}
+
+/* Modal Button */
+#modal-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #373A40;
+  font-size: 18px;
+  border-radius: 0;
+  width: 200px;
+  height: 40px;
+  font-weight: bold;
+  border: 2px solid #373A40;
+  background-color: #DC5F00;
+  box-shadow: 4px 4px 0px 0px #686D76;
+  transition: 0.3s;
+}
+
+#modal-button:hover {
+  color: #EEEEEE;
+  background-color: #373A40;
+  box-shadow: 0 0 #373A40;
+}
+
+/* Modal Styling */
+#modal, #delete-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+#modal-content, #delete-content {
+  background-color: #EEEEEE;
+  border: 2px solid #373A40;
+  box-shadow: 6px 6px 0px 0px #686D76;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+}
+
+/* Close Button */
+#close-modal, #close-delete-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #686D76;
+  transition: color 0.2s;
+}
+
+#close-modal:hover, #close-delete-modal:hover {
+  color: #EEEEEE;
+  background-color: #373A40;
+}
+
+/* Input Fields */
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #373A40;
+  background-color: #f9f9f9;
+  color: #373A40;
+  border-radius: 0;
+}
+
+/* Save Button */
+#save-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #373A40;
+  font-size: 18px;
+  width: 200px;
+  height: 40px;
+  font-weight: bold;
+  border: 2px solid #373A40;
+  background-color: #DC5F00;
+  box-shadow: 4px 4px 0px 0px #686D76;
+  transition: 0.3s;
+}
+
+#save-button:hover {
+  color: #EEEEEE;
+  background-color: #373A40;
+  box-shadow: 0 0 #373A40;
+}
+
+/* Delete and Edit Buttons */
+.btn-delete-modal, .btn-edit-modal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #373A40;
+  font-size: 14px;
+  border: 1px solid #373A40;
+  width: 80px;
+  height: 30px;
+  font-weight: bold;
+  background-color: #DC5F00;
+  box-shadow: 3px 3px 0px 0px #686D76;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-delete-modal:hover, .btn-edit-modal:hover {
+  color: #EEEEEE;
+  background-color: #373A40;
+  box-shadow: 0 0 #373A40;
+}
+
+/* Delete Confirmation Modal Buttons */
+#delete-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Delete Confirm and Cancel Buttons */
+#confirm-delete, #cancel-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #373A40;
+  font-size: 14px;
+  border: 1px solid #373A40;
+  width: 100px;
+  height: 30px;
+  font-weight: bold;
+  background-color: #DC5F00;
+  box-shadow: 3px 3px 0px 0px #686D76;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#confirm-delete:hover, #cancel-delete:hover {
+  color: #EEEEEE;
+  background-color: #373A40;
+  box-shadow: 0 0 #373A40;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 40
+}
