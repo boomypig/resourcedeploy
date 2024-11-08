@@ -85,7 +85,7 @@ function addMusicToDom(data) {
 
 // Fetch and load music from the server
 function loadMusicFromServer() {
-    fetch("http://localhost:8080/musics")
+    fetch("/musics")
         .then(function(response) {
             return response.json();
         })
@@ -105,7 +105,7 @@ function deleteMusic(data) {
     
     confirmDelete.onclick = function() {
       // Send delete request to server
-      fetch("http://localhost:8080/musics/" + data.id, {
+      fetch("/musics/" + data.id, {
         method: "DELETE",
         headers: { "Content-Type": "application/x-www-form-urlencoded" }
       })
@@ -134,11 +134,11 @@ function saveMusic() {
     data += "&genre=" + encodeURIComponent(genreInput.value);
     console.log("Data:",data)
     let method = "POST";
-    let URL = "http://localhost:8080/musics";
+    let URL = "/musics";
     
     if(editID){
         method = "PUT";
-        URL = "http://localhost:8080/musics/" + editID;
+        URL = "/musics/" + editID;
     }
     fetch(URL, {
         method: method,
@@ -184,3 +184,4 @@ modal.onclick = function(event) {
 
 // Initial load
 loadMusicFromServer();
+
